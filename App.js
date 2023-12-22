@@ -5,16 +5,15 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./components/screens/Home";
 import MyCart from "./components/screens/MyCart";
 import ProductoInfo from "./components/screens/ProductoInfo";
+import LoginScreen from "./components/screens/LoginScreen";
 
 const App= ()=>{
   const Stack =createNativeStackNavigator();
   return(
     <NavigationContainer>
       <Stack.Navigator
-      screenOptions={{
-        headerShown:false,
-        
-      }}>
+      initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="MyCart" component={MyCart}/>
         <Stack.Screen name="ProductoInfo" component={ProductoInfo}/>

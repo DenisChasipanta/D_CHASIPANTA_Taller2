@@ -40,7 +40,7 @@ const MyCart=({navigation})=>{
         let total=0;
         for (let index = 0; index < productoData.length; index++) {
             let productPrice = productoData[index].productPrice
-            total= total + productPrice * 1.21           
+            total= productPrice          
         }
         setTotal(total);
     };
@@ -66,7 +66,7 @@ const MyCart=({navigation})=>{
         } catch (error) {
             return error
         }
-        ToastAndroid.show("Items will be Deliverd SOON!!,",ToastAndroid.SHORT)
+        ToastAndroid.show("Compra exitosa,",ToastAndroid.SHORT)
         navigation.navigate("Home")
     }
 
@@ -128,11 +128,6 @@ const MyCart=({navigation})=>{
                             marginRight: 4,
                         }}>
                             &#8377;{data.productPrice}
-                            </Text>
-                            <Text>
-                                (~&#8377;{
-                                    data.productPrice +data.productPrice/20
-                                })
                             </Text>
                     </View>
                 </View>
@@ -271,7 +266,7 @@ const MyCart=({navigation})=>{
                                 fontWeight:"400",
                                 color:COLOURS.black,
                                 opacity:0.8,
-                            }}>&#8377;{total}.00</Text>
+                            }}>&#8377;{total}</Text>
                         </View>
                         <View style={{
                             flexDirection:"row",
@@ -290,7 +285,7 @@ const MyCart=({navigation})=>{
                                 fontSize:22,
                                 fontWeight:"500",
                                 color:COLOURS.black,
-                            }}>&#8377;{total * 1.21}</Text>
+                            }}>&#8377;{total * 0.12}</Text>
                         </View>
                     </View>
                 </View>
@@ -320,7 +315,7 @@ const MyCart=({navigation})=>{
                         color:COLOURS.white,
                         textTransform:"uppercase",
                     }}>
-                        CHECKOUT (&#8377;{total * 1.21})</Text>
+                        CHECKOUT (&#8377;{total * 0.12})</Text>
                 </TouchableOpacity>
             </View>
         </View>
